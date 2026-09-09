@@ -1,0 +1,22 @@
+vendors = {
+    "0001.64": "cisco",
+    "00d0.ba": "routert",
+    "00d0.d3": "server",
+}
+
+addresses = [
+    "0001.642e.e2ce",
+    "00d0.baa5.a613",
+    "00d0.d346.0a01",
+]
+
+for address in addresses:
+    # Plockar ut "0004.9a" direkt från Cisco-formatet
+    prefix = address[0:7]
+
+    if prefix in vendors:
+        name = vendors[prefix]
+    else:
+        name = "okand tillverkare"
+
+    print(f"{address} --> {name}")
